@@ -2,8 +2,7 @@ backend:
   name: github
   repo: Duylam0290/game-news-wiki
   branch: main
-  # Sẽ cập nhật 2 dòng dưới sau khi bạn triển khai OAuth provider
-  base_url: https://YOUR-OAUTH-DOMAIN
+  base_url: https://tamquochuyentuongchina.onrender.com/
   auth_endpoint: /auth
 
 site_url: "https://duylam0290.github.io/game-news-wiki"
