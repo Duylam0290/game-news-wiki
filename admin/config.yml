@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Duylam0290/game-news-wiki
   branch: main
-  base_url: https://tamquochuyentuongchina.onrender.com/
+  base_url: https://tamquochuyentuongchina.nguyenduylam3dk.workers.dev/
   auth_endpoint: /auth
 
 site_url: "https://duylam0290.github.io/game-news-wiki"
