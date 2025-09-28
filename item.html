@@ -1,0 +1,13 @@
+---
+layout: page
+title: "Nhân vật / Tướng"
+permalink: /characters.html
+---
+
+<ul>
+{% assign chars = site.characters | sort: "title" %}
+{% for c in chars %}
+  <li><a href="{{ c.url | relative_url }}">{{ c.title }}</a>
+  {% if c.role %}<small>— {{ c.role }}</small>{% endif %}</li>
+{% endfor %}
+</ul>
