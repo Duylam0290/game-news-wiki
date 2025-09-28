@@ -1,0 +1,13 @@
+main:
+  - title: "Trang chủ"
+    url: /
+  - title: "Tin tức"
+    url: /news/
+  - title: "Nhân vật"
+    url: /characters.html
+  - title: "Vật phẩm"
+    url: /items.html
+  - title: "Tìm kiếm"
+    url: /search/
+  - title: "Admin"
+    url: /admin/
