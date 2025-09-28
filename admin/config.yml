@@ -1,0 +1,59 @@
+backend:
+  name: github
+  repo: Duylam0290/game-news-wiki
+  branch: main
+  # Sẽ cập nhật 2 dòng dưới sau khi bạn triển khai OAuth provider
+  base_url: https://YOUR-OAUTH-DOMAIN
+  auth_endpoint: /auth
+
+site_url: "https://duylam0290.github.io/game-news-wiki"
+logo_url: https://avatars.githubusercontent.com/u/146516865?v=4
+
+media_folder: "assets/uploads"
+public_folder: "/game-news-wiki/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "posts"
+    label: "Tin tức"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Tiêu đề", name: "title", widget: "string" }
+      - { label: "Ngày", name: "date", widget: "datetime" }
+      - { label: "Ảnh đại diện", name: "image", widget: "image", required: false }
+      - { label: "Danh mục", name: "categories", widget: "list", default: ["news"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Nội dung", name: "body", widget: "markdown" }
+
+  - name: "characters"
+    label: "Nhân vật / Tướng"
+    folder: "_characters"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tên", name: "title", widget: "string" }
+      - { label: "Game", name: "game", widget: "string", required: false }
+      - { label: "Vai trò", name: "role", widget: "string", required: false }
+      - { label: "Kỹ năng", name: "skills", widget: "list", required: false }
+      - { label: "Vật phẩm khuyến nghị", name: "recommended_items", widget: "list", required: false }
+      - { label: "Mô tả", name: "body", widget: "markdown" }
+
+  - name: "items"
+    label: "Vật phẩm"
+    folder: "_items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tên", name: "title", widget: "string" }
+      - { label: "Loại", name: "type", widget: "string", required: false }
+      - label: "Chỉ số"
+        name: "stats"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "AD", name: "attack_damage", widget: "number", required: false}
+          - {label: "Crit%", name: "crit_chance", widget: "number", required: false}
+      - { label: "Mô tả", name: "body", widget: "markdown" }
