@@ -1,20 +1,9 @@
 ---
-layout: page
+layout: home
 title: "Trang chủ"
-permalink: /
+author_profile: false
+excerpt: "Tin tức game, wiki nhân vật và vật phẩm."
+header:
+  overlay_image: https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop
+  overlay_filter: 0.35
 ---
-
-## Tin mới
-<ul>
-{% for post in site.posts limit:10 %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <small>— {{ post.date | date: "%Y-%m-%d" }}</small>
-  </li>
-{% endfor %}
-</ul>
-
-## Danh mục
-- [Nhân vật]({{ "/characters.html" | relative_url }})
-- [Vật phẩm]({{ "/items.html" | relative_url }})
-- [Tìm kiếm]({{ "/search.html" | relative_url }})
