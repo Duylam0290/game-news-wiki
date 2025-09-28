@@ -1,0 +1,36 @@
+---
+layout: page
+title: "Tìm kiếm"
+permalink: /search.html
+---
+
+<input id="q" type="search" placeholder="Nhập từ khóa…" style="width:100%;padding:.6rem;font-size:1rem" />
+<ul id="results"></ul>
+
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script>
+(async function() {
+  const res = await fetch('{{ "/search.json" | relative_url }}');
+  const data = await res.json();
+  const idx = lunr(function () {
+    this.ref('url');
+    this.field('title');
+    this.field('content');
+    data.forEach(doc => this.add(doc));
+  });
+  const q = document.getElementById('q');
+  const out = document.getElementById('results');
+  q.addEventListener('input', () => {
+    const query = q.value.trim();
+    out.innerHTML = '';
+    if (!query) return;
+    const hits = idx.search(query).slice(0, 30);
+    hits.forEach(h => {
+      const doc = data.find(d => d.url === h.ref);
+      const li = document.createElement('li');
+      li.innerHTML = '<a href="'+doc.url+'">'+doc.title+'</a>';
+      out.appendChild(li);
+    });
+  });
+})();
+</script>
