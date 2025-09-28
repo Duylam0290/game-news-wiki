@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "Vật phẩm"
 permalink: /items.html
 ---
@@ -7,7 +7,6 @@ permalink: /items.html
 <ul>
 {% assign its = site.items | sort: "title" %}
 {% for i in its %}
-  <li><a href="{{ i.url | relative_url }}">{{ i.title }}</a>
-  {% if i.type %}<small>— {{ i.type }}</small>{% endif %}</li>
+  <li><a href="{{ i.url | relative_url }}">{{ i.title }}</a>{% if i.type %}<small> — {{ i.type }}</small>{% endif %}</li>
 {% endfor %}
 </ul>
