@@ -1,0 +1,7 @@
+:root { --maxw: 880px; }
+body { font-family: system-ui, Arial, sans-serif; line-height: 1.6; margin: 0 auto; padding: 1rem; max-width: var(--maxw); }
+h1,h2,h3 { line-height: 1.25; }
+nav a { margin-right: .5rem; }
+ul { padding-left: 1.2rem; }
+input[type="search"] { box-sizing: border-box; }
+.container { margin: 0 auto; }
