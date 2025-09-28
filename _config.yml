@@ -1,0 +1,37 @@
+title: "Game News & Wiki"
+description: "Tin tức game, nhân vật/tướng, vật phẩm – gọn nhẹ, SEO tốt"
+theme: minima
+# URL gốc trang user/organization pages của bạn
+url: "https://duylam0290.github.io"
+# baseurl cho project pages (để link đúng dạng /<repo>/...)
+baseurl: "/game-news-wiki"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+collections:
+  characters:
+    output: true
+    permalink: /characters/:name/
+  items:
+    output: true
+    permalink: /items/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "characters"
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "items"
+    values:
+      layout: page
