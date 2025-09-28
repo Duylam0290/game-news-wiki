@@ -1,0 +1,9 @@
+---
+# Only the main Sass file needs front matter
+---
+
+@import "minimal-mistakes/skins/dark"; // hoặc "default"
+@import "minimal-mistakes";
+
+// Tùy chỉnh nhẹ
+.page__content img { border-radius: 6px; }
