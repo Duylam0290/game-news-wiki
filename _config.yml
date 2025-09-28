@@ -1,15 +1,17 @@
 title: "Game News & Wiki"
 description: "Tin tức game, nhân vật/tướng, vật phẩm – gọn nhẹ, SEO tốt"
-theme: minima
-# URL gốc trang user/organization pages của bạn
 url: "https://duylam0290.github.io"
-# baseurl cho project pages (để link đúng dạng /<repo>/...)
 baseurl: "/game-news-wiki"
 
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+
+search: true
 
 collections:
   characters:
@@ -24,14 +26,39 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: post
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: false
+      share: true
+      related: true
   - scope:
       path: ""
       type: "characters"
     values:
-      layout: page
+      layout: single
+      author_profile: false
   - scope:
       path: ""
       type: "items"
     values:
-      layout: page
+      layout: single
+      author_profile: false
+
+paginate: 10
+paginate_path: "/news/page:num"
+permalink: /:categories/:title/
+
+# Tùy chọn: bật Giscus khi bạn có ID sau
+comments:
+  provider: giscus
+  giscus:
+    repo: "Duylam0290/game-news-wiki"
+    repo_id: ""
+    category: "General"
+    category_id: ""
+    mapping: "pathname"
+    reactions_enabled: true
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "vi"
